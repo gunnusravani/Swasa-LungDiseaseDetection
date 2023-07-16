@@ -1,0 +1,16 @@
+fastapi
+fastapi-sqlalchemy
+pydantic
+alembic
+psycopg2
+uvicorn
+python-dotenv
+pandas
+Pillow>=8.3.1
+Jinja2==3.0.3
+python-multipart
+tensorflow
+google-cloud-bigquery
+db-dtypes
+google-cloud-storage
+datetime

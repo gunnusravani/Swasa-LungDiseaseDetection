@@ -1,0 +1,190 @@
+{% extends "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lung Disease Detection</title>
+
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+    integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
+
+</head>
+
+
+<body>
+
+  <section id="Analysis">
+
+    <div class="dropdrown">
+      <form class="form-inline" id="form-inline" style="padding-left: 3px;" action="/getdata" method="POST">
+        <h4 style="color:rgb(20, 49, 77)">Search for a Report ?</h4>
+        <div class="row " style="padding-top:10px; ">
+          <div class="col-md-4">
+            <select class="form-control" name="patient_id" id="patient_id" required>
+              <option disabled selected>-- Select Option --</option>
+              <option value="111223241789">111223241789 - Stella</option>
+              <option value="245678901231">245678901231 - John</option>
+              <option value="884567245612">884567245612 - Elvis </option>
+              <option value="342567819042">342567819042 - Frank</option>
+              <option value="102938475610">102938475610 - James</option>
+            </select>
+
+          </div>
+          <div class="col-md-4 ">
+            <button type="submit" class="btn btn-primary mb-2" href="#report">Submit</button>
+          </div>
+          <br>
+      </form>
+    </div>
+    {% if img1 or img %}
+    <br>
+    <section id="report">
+    <div class="reportcard">
+      <div class="row"style="margin-right:0px;important;padding-right:0px;width: 718px;" >
+        <div class="card3" style="width:800px;">
+          <div class="card-body6">Name: {{patient_name}}</div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-5">
+
+          <div class="image-box">
+            {% if img %}
+            <img src="{{ img }}">
+            {% else %}
+            <img src="data:image/{{ image_format }};base64,{{ img1 }}">
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row" style="width: 425px;">
+            <div class="card4">
+
+              <div class="card-body7"><b>Age :</b> <span id="age"></span></div>
+            </div>
+          </div>
+          <br>
+
+          <div class="row" style="width: 425px;">
+            <div class="card4">
+              <div class="card-body7"><b>Gender : </b>{{Gender}}</div>
+            </div>
+          </div>
+          <br>
+
+          <div class="row" style="width: 425px;">
+            <div class="card4">
+              <div class="card-body7"><b>Date of Test :</b> {{ date }}</div>
+            </div>
+          </div>
+          <br>
+          <div class="row" >
+            <div class="col-md-6">
+              <div class="card5">
+                <div class="card-body8" style="background-color:{% if result1 >50 %}
+                        #f55d6c;color: white
+                      {% elif result1 <20 %}
+                      #85ed79;
+                      {% else %}
+                      #f9fc90;
+                      {% endif %}
+                    ">
+                  <b>Pneumonia :</b> {{result1}} %
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card5" style="width:240px">
+                <div class="card-body8" style="background-color:
+                        {% if result2 > 50 %}
+                        #f55d6c;color: white
+                        {% elif result2 < 20 %}
+                        #85ed79;
+                        {% else %}
+                        #f9fc90;
+                        {% endif %}
+                      ">
+                  <b>Tuberculosis :</b> {{result2}} %
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <br>
+
+          <div class="row" >
+            <div class="col-md-6">
+              <div class="card5">
+                <div class="card-body8" style="background-color:{% if result3 >50 %}
+                        #f55d6c;color: white
+                      {% elif result3 <20 %}
+                      #85ed79;
+                      {% else %}
+                      #f9fc90;
+                      {% endif %}
+                    ">
+                  <b>Cancer :</b> {{result3}} %
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card5" style="width:240px">
+                <div class="card-body8" style="background-color:
+                        {% if result4 > 50 %}
+                        #f55d6c;color: white
+                        {% elif result4 < 20 %}
+                        #85ed79;
+                        {% else %}
+                        #f9fc90;
+                        {% endif %}
+                      ">
+                  <b>Covid19 :</b> {{result4}} %
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+      {% endif %}
+    </section>
+  </section>
+
+  <script>
+
+
+    function calculateAge(dob) {
+      var today = new Date();
+      var birthDate = new Date(dob);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var monthDiff = today.getMonth() - birthDate.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+    var dob = '{{patient_dob}}';  // Replace with the actual DOB variable value
+    var ageElement = document.getElementById("age");
+    ageElement.innerText = calculateAge(dob);
+
+  </script>
+  {% endblock %}
+</body>
+
+</html>
