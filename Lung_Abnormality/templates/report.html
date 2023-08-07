@@ -23,6 +23,7 @@
 </head>
 
 
+
 <body>
 
   <section id="Analysis">
@@ -34,6 +35,20 @@
           <div class="col-md-4">
             <select class="form-control" name="patient_id" id="patient_id" required>
               <option disabled selected>-- Select Option --</option>
+              <option value="111223241789">111223241789 - Stella</option>
+              <option value="245678901231">245678901231 - John</option>
+              <option value="884567245612">884567245612 - Elvis </option>
+              <option value="342567819042">342567819042 - Frank</option>
+              <option value="102938475610">102938475610 - James</option>
+              <option value="123456789888">123456789888 - Cary</option>
+              <option value="098765432109">098765432109 - Aretha</option>
+              <option value="8622644965216">8622644965216 - Rose</option>
+              <option value="89076566711">89076566711 - Jhonathon</option>
+              <option value="123456780118">123456780118 - Angel</option>
+              <option value="123456781118">123456781118 - Fred</option>
+              <option value="123456781188">123456781188 - Daniel</option>
+              <option value="123456781448">123456781448 - Vin</option>
+              <option value="345678901666">345678901666 - Alexis</option>           
               <option value="111223241789">111223241789 - Stella</option>
               <option value="245678901231">245678901231 - John</option>
               <option value="884567245612">884567245612 - Elvis </option>
@@ -51,49 +66,60 @@
     {% if img1 or img %}
     <br>
     <section id="report">
-    <div class="reportcard">
-      <div class="row"style="margin-right:0px;important;padding-right:0px;width: 718px;" >
+      <div class="reportcard">
+        <!-- <div class="row"style="margin-right:0px;important;padding-right:0px;width: 718px;" >
         <div class="card3" style="width:800px;">
           <div class="card-body6">Name: {{patient_name}}</div>
         </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-5">
+      </div> -->
+        <br>
+        <div class="row">
+          <div class="col-md-5">
 
-          <div class="image-box">
-            {% if img %}
-            <img src="{{ img }}">
-            {% else %}
-            <img src="data:image/{{ image_format }};base64,{{ img1 }}">
-            {% endif %}
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row" style="width: 425px;">
-            <div class="card4">
-
-              <div class="card-body7"><b>Age :</b> <span id="age"></span></div>
+            <div class="image-box">
+              {% if img %}
+              <img src="{{ img }}">
+              {% else %}
+              <img src="data:image/{{ image_format }};base64,{{ img1 }}">
+              {% endif %}
             </div>
           </div>
-          <br>
+          <div class="col-md-6">
+            <div class="row" style="width: 425px;">
+              <div class="card4">
 
-          <div class="row" style="width: 425px;">
+                <div class="card-body7"><b>Name : </b>{{patient_name}}</div>
+              </div>
+            </div>
+
+            <div class="row" style="width: 425px;padding-top: 20px;">
+
+              <div class="card4 col-md-6 ">
+
+                <div class="card-body7"><b>Age :</b> <span id="age"></span></div>
+              </div>
+              <div class="card4 col-md-6">
+                <div class="card-body7"><b>Gender : </b>{{Gender}}</div>
+              </div>
+            </div>
+            <br>
+
+            <!-- <div class="row" style="width: 425px;">
             <div class="card4">
               <div class="card-body7"><b>Gender : </b>{{Gender}}</div>
             </div>
           </div>
-          <br>
+          <br> -->
 
-          <div class="row" style="width: 425px;">
-            <div class="card4">
-              <div class="card-body7"><b>Date of Test :</b> {{ date }}</div>
+            <div class="row" style="width: 425px;">
+              <div class="card4">
+                <div class="card-body7"><b>Date of Test :</b> {{ date }}</div>
+              </div>
             </div>
-          </div>
-          <br>
-          <div class="row" >
-            <div class="col-md-6">
-              <div class="card5">
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- <div class="card5">
                 <div class="card-body8" style="background-color:{% if result1 >50 %}
                         #f55d6c;color: white
                       {% elif result1 <20 %}
@@ -104,12 +130,36 @@
                     ">
                   <b>Pneumonia :</b> {{result1}} %
                 </div>
+              </div> -->
+              <div class="card5">
+                <div class="sc-gauge">
+                  <div class="sc-background">
+                    <div class="sc-percentage" style="background-color:
+                      {% if result1 > 50 %}
+                        #f55d6c;color: white;
+                      {% elif result1 < 20 %}
+                        #85ed79;
+                      {% else %}
+                        #f9fc90;
+                      {% endif %}
+                      transform: rotate({{ result1 }}deg);"></div>
+                    <div class="sc-mask"></div>
+                    <span class="sc-value">{{ result1/1.8 }}</span>
+                    <span  class="sc-value" style="font-size:15px;padding-top:30px;">Pneumonia</span>
+                   
+                  </div>
+                            
+                  <span class="sc-min">0</span>
+                  <span class="sc-max">100</span>
+                </div>
               </div>
-            </div>
+             
+                </div>
+              
 
-            <div class="col-md-6">
-              <div class="card5" style="width:240px">
-                <div class="card-body8" style="background-color:
+              <div class="col-md-6">
+                <div class="card5" style="width:240px">
+                  <div class="card-body8" style="background-color:
                         {% if result2 > 50 %}
                         #f55d6c;color: white
                         {% elif result2 < 20 %}
@@ -118,19 +168,19 @@
                         #f9fc90;
                         {% endif %}
                       ">
-                  <b>Tuberculosis :</b> {{result2}} %
+                    <b>Tuberculosis :</b> {{result2}} %
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
 
-          <br>
+            <br>
 
-          <div class="row" >
-            <div class="col-md-6">
-              <div class="card5">
-                <div class="card-body8" style="background-color:{% if result3 >50 %}
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card5">
+                  <div class="card-body8" style="background-color:{% if result3 >50 %}
                         #f55d6c;color: white
                       {% elif result3 <20 %}
                       #85ed79;
@@ -138,14 +188,14 @@
                       #f9fc90;
                       {% endif %}
                     ">
-                  <b>Cancer :</b> {{result3}} %
+                    <b>Cancer :</b> {{result3}} %
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-6">
-              <div class="card5" style="width:240px">
-                <div class="card-body8" style="background-color:
+              <div class="col-md-6">
+                <div class="card5" style="width:240px">
+                  <div class="card-body8" style="background-color:
                         {% if result4 > 50 %}
                         #f55d6c;color: white
                         {% elif result4 < 20 %}
@@ -154,15 +204,15 @@
                         #f9fc90;
                         {% endif %}
                       ">
-                  <b>Covid19 :</b> {{result4}} %
+                    <b>Covid19 :</b> {{result4}} %
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
-    
-      </div>
-      {% endif %}
+        {% endif %}
     </section>
   </section>
 

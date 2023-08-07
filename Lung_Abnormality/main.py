@@ -225,7 +225,7 @@ async def get_data(request: Request,patient_id:Annotated[str,Form(...)]):
 
  
 
-   return templates.TemplateResponse("report.html", {"request": request, "result1":pred1,"result2":pred2,"result3":pred3, "result4":pred4, "img":image_path, "patient_name":patient_name,"patient_dob":patient_dob,"patient_email":patient_email,"Gender":Gender,"Uploaded_image":image_type,"date":date})
+   return templates.TemplateResponse("report.html", {"request": request, "result1":pred1*1.8,"result2":pred2,"result3":pred3, "result4":pred4, "img":image_path, "patient_name":patient_name,"patient_dob":patient_dob,"patient_email":patient_email,"Gender":Gender,"Uploaded_image":image_type,"date":date})
    
    # df.head()
    #    return df.to_html()   

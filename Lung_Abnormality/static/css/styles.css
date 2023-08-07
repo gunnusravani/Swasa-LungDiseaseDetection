@@ -441,3 +441,46 @@ h1 {
     font-family: 'Open Sans', sans-serif;
   /* font-family: 'Roboto', sans-serif; */
 }
+
+.sc-gauge  { width:150px; height:100px;}
+.sc-background { position:relative; height:80px; margin-bottom:10px; background-color:#ffffff; border-radius:150px 150px 0 0; overflow:hidden; text-align:center; }
+.sc-mask { position:absolute; top:20px; right:20px; left:20px; height:80px; background-color:#e3edfe; border-radius:150px 150px 0 0 }
+.sc-percentage { position:absolute; top:100px; left:-200%; width:400%; height:400%; margin-left:100px;  }
+.sc-percentage { transform-origin:top center; }
+.sc-min { float:left; }
+.sc-max { float:right; }
+.sc-value { position:absolute; top:30%; left:0; width:100%;  font-size:20px; font-weight:500 }
+
+.gauge-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+.gauge-background {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ddd;
+  position: absolute;
+}
+
+.gauge-fill {
+  width: 50%;
+  height: 100%;
+  border-radius: 0 100% 100% 0 / 50%;
+  background-color: #f9fc90;
+  position: absolute;
+  transform-origin: right center;
+  transform: rotate(0deg);
+}
+
+.gauge-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+}
