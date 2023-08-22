@@ -25,7 +25,7 @@ from fastapi.responses import HTMLResponse
 import pandas as pd
 import os
 
-key_path = "cloudkarya-internship-1c013aa63f5f.json"
+key_path = "cloudkarya-internship-2cf4f5ab8c3e.json"
 bigquery_client = bigquery.Client.from_service_account_json(key_path)
 storage_client = storage.Client.from_service_account_json(key_path)
 
@@ -225,7 +225,7 @@ async def get_data(request: Request,patient_id:Annotated[str,Form(...)]):
 
  
 
-   return templates.TemplateResponse("report.html", {"request": request, "result1":pred1*1.8,"result2":pred2,"result3":pred3, "result4":pred4, "img":image_path, "patient_name":patient_name,"patient_dob":patient_dob,"patient_email":patient_email,"Gender":Gender,"Uploaded_image":image_type,"date":date})
+   return templates.TemplateResponse("report.html", {"request": request, "result1":pred1*1.8,"result2":pred2*1.8,"result3":pred3*1.8, "result4":pred4*1.8, "img":image_path, "patient_name":patient_name,"patient_dob":patient_dob,"patient_email":patient_email,"Gender":Gender,"Uploaded_image":image_type,"date":date})
    
    # df.head()
    #    return df.to_html()   

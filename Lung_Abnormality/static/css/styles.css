@@ -317,10 +317,10 @@ th {
 
 .image-box {
   max-width: 400px;
-  height: 312px;
+  height: 400px;
   overflow: hidden;
   padding-left: 40px;
-  padding-top: 1.5px;
+  padding-top: 40px;
 }
 
 .image-box img {
@@ -442,7 +442,7 @@ h1 {
   /* font-family: 'Roboto', sans-serif; */
 }
 
-.sc-gauge  { width:150px; height:100px;}
+.sc-gauge  { width:170px; height:110px;}
 .sc-background { position:relative; height:80px; margin-bottom:10px; background-color:#ffffff; border-radius:150px 150px 0 0; overflow:hidden; text-align:center; }
 .sc-mask { position:absolute; top:20px; right:20px; left:20px; height:80px; background-color:#e3edfe; border-radius:150px 150px 0 0 }
 .sc-percentage { position:absolute; top:100px; left:-200%; width:400%; height:400%; margin-left:100px;  }
