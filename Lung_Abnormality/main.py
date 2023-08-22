@@ -221,11 +221,15 @@ async def get_data(request: Request,patient_id:Annotated[str,Form(...)]):
    pred3=round(predi3*100,2)
    pred4=round(predi4*100,2)
    patient_name=patient_fname + " " + patient_lname 
+   percentage = min(pred4, 100)
+   remaining_percentage = max(min(pred4, 100), 0)
+
    
 
  
 
-   return templates.TemplateResponse("report.html", {"request": request, "result1":pred1*1.8,"result2":pred2*1.8,"result3":pred3*1.8, "result4":pred4*1.8, "img":image_path, "patient_name":patient_name,"patient_dob":patient_dob,"patient_email":patient_email,"Gender":Gender,"Uploaded_image":image_type,"date":date})
+   return templates.TemplateResponse("report.html", {"request": request, "result1":pred1*1.8,"result2":pred2*1.8,"result3":pred3*1.8, "result4":pred4*1.8, "img":image_path, "patient_name":patient_name,"patient_dob":patient_dob,"patient_email":patient_email,"Gender":Gender,"Uploaded_image":image_type,"date":date
+   , "per4":percentage,"remper4":remaining_percentage})
    
    # df.head()
    #    return df.to_html()   

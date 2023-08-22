@@ -35,7 +35,7 @@
           <div class="col-md-4">
             <select class="form-control" name="patient_id" id="patient_id" required>
               <option disabled selected>-- Select Option --</option>
-              <option value="111223241789">Stella - 111223241789 </option>
+
               <option value="245678901231">John - 245678901231 </option>
               <option value="884567245612">Elvis - 884567245612 </option>
               <option value="342567819042">Frank - 342567819042 </option>
@@ -48,11 +48,7 @@
               <option value="123456781188">Daniel - 123456781188 </option>
               <option value="123456781448">Vin - 123456781448 </option>
               <option value="345678901666">Alexis - 345678901666 </option>
-              <option value="111223241789">Stella - 111223241789 </option>
-              <option value="245678901231">John - 245678901231 </option>
-              <option value="884567245612">Elvis - 884567245612 </option>
-              <option value="342567819042">Frank - 342567819042 </option>
-              <option value="102938475610">James - 102938475610 </option>
+        
             </select>
 
           </div>
@@ -118,7 +114,7 @@
             <br>
             <div class="row">
               <div class="col-md-6">
-                <!-- <div class="card5">
+                <div class="card5">
                 <div class="card-body8" style="background-color:{% if result1 >50 %}
                         #f55d6c;color: white
                       {% elif result1 <20 %}
@@ -129,20 +125,20 @@
                     ">
                   <b>Pneumonia :</b> {{result1}} %
                 </div>
-              </div> -->
-                <div class="card5" >
+              </div>
+                <!-- <div class="card5" >
                   <div class="sc-gauge" >
                     <div class="sc-background">
                       <div class="sc-percentage" style="background-color:
                       {% if result1/1.8 > 50 %}
                         #f55d6c;color: white;
-                      {% elif result1/1.8 < 30 %}
+                      {% elif result1/1.8 < 20 %}
                         #85ed79;
                       {% else %}
-                        #f9fc90;
+                      #e7ee06;
                       {% endif %}
                       transform: rotate({{ result1 }}deg);"></div>
-                      <div class="sc-mask"></div>
+                      <div class="sc-mask" ></div>
                       <span class="sc-value">{{ '%.2f' % (result1/1.8) }}</span>
                       <span class="sc-value" style="font-size:15px;padding-top:30px;">Pneumonia</span>
 
@@ -151,13 +147,13 @@
                     <span class="sc-min">0</span>
                     <span class="sc-max">100</span>
                   </div>
-                </div>
+                </div> -->
 
               </div>
 
 
               <div class="col-md-6">
-                <!-- <div class="card5" style="width:240px">
+                <div class="card5" style="width:240px">
                   <div class="card-body8" style="background-color:
                         {% if result2 > 50 %}
                         #f55d6c;color: white
@@ -169,20 +165,20 @@
                       ">
                     <b>Tuberculosis :</b> {{result2}} %
                   </div>
-                </div> -->
-                <div class="card5">
+                </div>
+                <!-- <div class="card5">
                   <div class="sc-gauge" style="padding-left: 10px;">
                     <div class="sc-background">
                       <div class="sc-percentage" style="background-color:
                       {% if result2/1.8 > 50 %}
                         #f55d6c;color: white;
-                      {% elif result2/1.8 < 30 %}
+                      {% elif result2/1.8 < 20 %}
                         #85ed79;
                       {% else %}
-                        #f9fc90;
+                      #e7ee06;
                       {% endif %}
                       transform: rotate({{ result2 }}deg);"></div>
-                      <div class="sc-mask"></div>
+                      <div class="sc-mask" ></div>
                       <span class="sc-value">{{ '%.2f' % (result2/1.8) }}</span>
                       <span class="sc-value" style="font-size:15px;padding-top:30px;">Tuberculosis</span>
 
@@ -191,7 +187,7 @@
                     <span class="sc-min">0</span>
                     <span class="sc-max">100</span>
                   </div>
-                </div>
+                </div> -->
 
 
               </div>
@@ -202,7 +198,7 @@
 
             <div class="row">
               <div class="col-md-6">
-                <!-- <div class="card5">
+                <div class="card5">
                   <div class="card-body8" style="background-color:{% if result3 >50 %}
                         #f55d6c;color: white
                       {% elif result3 <20 %}
@@ -213,20 +209,20 @@
                     ">
                     <b>Cancer :</b> {{result3}} %
                   </div>
-                </div> -->
-                <div class="card5">
+                </div>
+                <!-- <div class="card5">
                   <div class="sc-gauge">
                     <div class="sc-background">
                       <div class="sc-percentage" style="background-color:
                       {% if result3/1.8 > 50 %}
                         #f55d6c;color: white;
-                      {% elif result3/1.8 < 30 %}
+                      {% elif result3/1.8 < 20 %}
                         #85ed79;
                       {% else %}
-                        #f9fc90;
+                      #e7ee06;
                       {% endif %}
                       transform: rotate({{ result3 }}deg);"></div>
-                      <div class="sc-mask"></div>
+                      <div class="sc-mask" ></div>
                       <span class="sc-value">{{ '%.2f' % (result3/1.8) }}</span>
                       <span class="sc-value" style="font-size:15px;padding-top:30px;">Cancer</span>
 
@@ -235,13 +231,13 @@
                     <span class="sc-min">0</span>
                     <span class="sc-max">100</span>
                   </div>
-                </div>
+                </div> -->
 
 
               </div>
 
               <div class="col-md-6">
-                <!-- <div class="card5" style="width:240px">
+                <div class="card5" style="width:240px">
                   <div class="card-body8" style="background-color:
                         {% if result4 > 50 %}
                         #f55d6c;color: white
@@ -253,20 +249,20 @@
                       ">
                     <b>Covid19 :</b> {{result4}} %
                   </div>
-                </div> -->
-                <div class="card5">
-                  <div class="sc-gauge" style="padding-left: 10px;">
+                </div>
+                <!-- <div class="card5">
+                  <div class="sc-gauge" style="padding-left:10px;">
                     <div class="sc-background">
                       <div class="sc-percentage" style="background-color:
                       {% if result4/1.8 > 50 %}
                         #f55d6c;color: white;
-                      {% elif result4/1.8 < 30 %}
+                      {% elif result4/1.8 < 20 %}
                         #85ed79;
                       {% else %}
-                        #f9fc90;
+                      #e7ee06;
                       {% endif %}
                       transform: rotate({{ result4 }}deg);"></div>
-                      <div class="sc-mask"></div>
+                      <div class="sc-mask" ></div>
                       <span class="sc-value">{{ '%.2f' % (result4/1.8) }}</span>
                       <span class="sc-value" style="font-size:15px;padding-top:30px;">Covid-19</span>
 
@@ -275,7 +271,7 @@
                     <span class="sc-min">0</span>
                     <span class="sc-max">100</span>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
